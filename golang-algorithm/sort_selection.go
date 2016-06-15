@@ -34,7 +34,7 @@ func selectionSort(array []int) {
 }
 
 func main() {
-	var array []int = []int{5, 7, 6, 1, 4, 3, 2}
+	var array []int = []int{5, 7, 6, 1, 4, 3, 2, 0}
 	printArray(array)
 	selectionSort(array)
 	printArray(array)

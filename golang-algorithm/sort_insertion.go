@@ -30,9 +30,21 @@ func sort(array []int) {
 
 }
 
+func sort_enhance(array []int) {
+	len := len(array)
+	var j int
+	for i := 1; i < len; i++ {
+		tmp := array[i]
+		for j = i - 1; j >= 0 && less(tmp, array[j]); j-- {
+			array[j+1] = array[j]
+		}
+		array[j+1] = tmp
+	}
+}
+
 func main() {
 	var array []int = []int{5, 7, 6, 1, 4, 3, 2}
 	printArray(array)
-	sort(array)
+	sort_enhance(array)
 	printArray(array)
 }

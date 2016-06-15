@@ -3,11 +3,12 @@ package main
 
 import (
 	"fmt"
+	//	"os"
 )
 
 func main() {
 	// variables declare
-	//	var v1 int
+	// var v1 int
 	//	var v2 string
 	//	var v3 [10]int // array
 	//	var v4 []int   // slice
@@ -38,9 +39,9 @@ func main() {
 	//	fmt.Println(v17)
 
 	// give variable value
-	var v18 int
-	v18 = 18
-	fmt.Println(v18)
+	//	var v18 int
+	//	v18 = 18
+	//	fmt.Println(v18)
 
 	// ananymous variables
 	//	func getName() (firstName, lastName string)  {
@@ -48,4 +49,27 @@ func main() {
 	//	}
 
 	//	_,lastName :=getName()
+
+	// const
+
+	// literal
+	//	fmt.Println(-12)
+
+	//	const PI = 3.14
+	//	fmt.Println(PI)
+
+	//	const a, b, c = 3, 4, "abc"
+	//	fmt.Println(a, b, c)
+
+	// 常量定义的右值可以是编译期运行的常量表达式
+	//	const mask = 1 << 3
+	//	fmt.Println(mask)
+
+	// 右值不能是运行期才能知道的表达式
+	//	const env = os.Getenv("HOME")
+	//	env := os.Getenv("HOME")
+	//	fmt.Println(env)
+
+	// 预定义常量 true/false/iota
+	fmt.Println(^3)
 }

@@ -92,5 +92,5 @@ func main() {
 	//	fmt.Println(MON, TUE, FRI, numberOfDay)
 
 	//类型
-	//
+	//bool:true/false
 }

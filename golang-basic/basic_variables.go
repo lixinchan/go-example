@@ -71,5 +71,26 @@ func main() {
 	//	fmt.Println(env)
 
 	// 预定义常量 true/false/iota
-	fmt.Println(^3)
+	//	const (
+	//		a = iota
+	//		b = iota
+	//		c
+	//	)
+	//	fmt.Println(a, b, c)
+
+	// 枚举
+	//	const (
+	//		SUN = iota
+	//		MON
+	//		TUE
+	//		WEND
+	//		THU
+	//		FRI
+	//		SAT
+	//		numberOfDay
+	//	)
+	//	fmt.Println(MON, TUE, FRI, numberOfDay)
+
+	//类型
+	//
 }

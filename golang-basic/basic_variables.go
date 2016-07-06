@@ -93,4 +93,7 @@ func main() {
 
 	//类型
 	//bool:true/false
+	var flag bool = true
+	fmt.Println(flag)
+
 }

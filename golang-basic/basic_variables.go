@@ -93,7 +93,35 @@ func main() {
 
 	//类型
 	//bool:true/false
-	var flag bool = true
-	fmt.Println(flag)
+	//	var flag bool = true
+	//	fmt.Println(flag)
 
+	// integer
+	//	var val int32
+	//	val = 43
+	//	fmt.Println(val)
+
+	//	fmt.Println(^2)
+	// String
+	//	var str string
+	//	str = "Hello,World"
+	//	fmt.Println(str)
+	//	fmt.Println(len(str))
+	//	ch := str[0]
+	//	fmt.Println(ch)
+	// 字符串的内容不能再初始化之后修改
+	//	str[0] = 'A'
+	//	fmt.Println(str[0])
+
+	// string iter
+	str := "Hello, 世界"
+	//	len := len(str)
+	//	for i := 0; i < len; i++ {
+	//		ch := str[i]
+	//		fmt.Println(i, ch)
+	//	}
+
+	for i, ch := range str {
+		fmt.Println(i, ch)
+	}
 }

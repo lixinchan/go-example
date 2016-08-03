@@ -3,6 +3,7 @@ package main
 
 import (
 	"fmt"
+	"sortUtils"
 )
 
 func less(v int, w int) bool {
@@ -47,4 +48,5 @@ func main() {
 	printArray(array)
 	sort_enhance(array)
 	printArray(array)
+	sortUtils.PrintArray(array)
 }

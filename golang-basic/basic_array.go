@@ -86,16 +86,16 @@ func main() {
 	//	fmt.Println(newSlice)
 
 	// copy() func
-	//	slice1 := []int{1, 2, 3, 4, 5}
-	//	slice2 := []int{6, 7, 8}
-	// copy(slice1, slice2)
-	//	copy(slice2, slice1)
-	//	fmt.Println(slice1)
-	//	fmt.Println(slice2)
+	slice1 := []int{1, 2, 3}
+	slice2 := []int{6, 7, 8}
+	copy(slice1, slice2)
+	copy(slice2, slice1)
+	fmt.Println(slice1)
+	fmt.Println(slice2)
 
 	// reverse array
-	var array []int = []int{0, 1, 2, 3, 4, 5, 6, 7, 8}
-	fmt.Println(array)
-	retArray := reverseArray(array)
-	fmt.Println(retArray)
+	//	var array []int = []int{0, 1, 2, 3, 4, 5, 6, 7, 8}
+	//	fmt.Println(array)
+	//	retArray := reverseArray(array)
+	//	fmt.Println(retArray)
 }

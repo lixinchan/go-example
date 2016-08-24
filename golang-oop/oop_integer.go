@@ -1,5 +1,5 @@
 // Integer.go 为类型添加方法
-package Integer
+package main
 
 import (
 	"fmt"

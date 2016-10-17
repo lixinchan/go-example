@@ -103,9 +103,13 @@ func main() {
 
 	//	fmt.Println(^2)
 	// String
-	//	var str string
-	//	str = "Hello,World"
-	//	fmt.Println(str)
+	var str string
+	str = "Hello," +
+		"World"
+	// 原始字符串标识的值在重音符中的字符是不转义的
+	//	str = `Hello,
+	//	World`
+	fmt.Println(str)
 	//	fmt.Println(len(str))
 	//	ch := str[0]
 	//	fmt.Println(ch)
@@ -113,15 +117,23 @@ func main() {
 	//	str[0] = 'A'
 	//	fmt.Println(str[0])
 
+	//	char := []rune(str)
+	//	fmt.Println(char)
+	//	char[0] = 'c'
+	//	str2 := string(char)
+	//	fmt.Println("%s\n", str2)
+	//	fmt.Println(char)
+
 	// string iter
-	str := "Hello, 世界"
+	//	str := "Hello, 世界"
 	//	len := len(str)
 	//	for i := 0; i < len; i++ {
 	//		ch := str[i]
 	//		fmt.Println(i, ch)
 	//	}
 
-	for i, ch := range str {
-		fmt.Println(i, ch)
-	}
+	//	for i, ch := range str {
+	//		fmt.Println(i, ch)
+	//	}
+
 }

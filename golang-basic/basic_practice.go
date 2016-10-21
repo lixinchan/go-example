@@ -26,17 +26,31 @@ func main() {
 	//	}
 
 	// Q2 FizzBuzz
-	for index := 1; index <= 100; index++ {
-		switch index {
-		case index%3 == 0:
-			fmt.Println(index, "-Fizz")
-		case index%5 == 0:
-			fmt.Println(index, "-Buzz")
-		case index%3 == 0 && index%5 == 0:
-			fmt.Println(index, "-FizzBuzz")
-		default:
-			fmt.Println(index, "-", index)
-		}
-	}
+	//	const (
+	//		FIZZ = 3
+	//		BUZZ = 5
+	//	)
+
+	//	for index := 1; index <= 100; index++ {
+	//		flag := false
+	//		if index%FIZZ == 0 {
+	//			fmt.Print("Fizz")
+	//			flag = true
+	//		}
+	//		if index%BUZZ == 0 {
+	//			fmt.Print("Buzz")
+	//			flag = true
+	//		}
+	//		if !flag {
+	//			fmt.Print(index)
+	//		}
+	//		fmt.Println()
+	//	}
+
+	// := 什么时候可用？本次声明的变量与index在同一作用于中，如果index在外层已经声明，
+	//	那么新声明的这个变量将是一个新的变量，并且，类型需要一致，本次声明中至少有一个变量是新声明的
+	var index int = 5
+	idx, index := 1, 3
+	fmt.Println(idx, index)
 
 }

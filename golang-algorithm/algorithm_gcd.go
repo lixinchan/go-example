@@ -14,6 +14,6 @@ func gcd(p, q int) int {
 }
 
 func main() {
-	retVal := gcd(16, 3)
+	retVal := gcd(16, 4)
 	fmt.Println("The gcd is:", retVal)
 }

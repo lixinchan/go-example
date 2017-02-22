@@ -16,7 +16,7 @@ func fibonacci(N int) int {
 }
 
 func main() {
-	for index := 0; index < 20; index++ {
+	for index := 0; index < 15; index++ {
 		fmt.Println(index, ":", fibonacci(index))
 	}
 }

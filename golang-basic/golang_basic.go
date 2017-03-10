@@ -40,7 +40,7 @@ func main() {
 	//		fmt.Println(i, chr)
 	//	}
 
-	//	var arr []int = []int{1, 2, 3, 4, 5}
+	var arr []int = []int{1, 2, 3, 4, 5}
 
 	//	for i := 0; i < len(arr); i++ {
 	//		fmt.Println("Element", i, "of array is", arr[i])
@@ -53,10 +53,10 @@ func main() {
 	//	modify(arr)
 	//	fmt.Println("In main array values:", arr)
 
-	// slice based on array
+	//	 slice based on array
 	//	var mySlice []int = arr[1:3]
-	//	mySlice := arr[1:3]
-	//	fmt.Println(mySlice)
+	mySlice := arr[1:3]
+	fmt.Println(mySlice)
 
 	//	for _, v := range mySlice {
 	//		fmt.Println("mySlice:", v)
@@ -95,18 +95,18 @@ func main() {
 	//	fmt.Println(slice1)
 	//	fmt.Println(slice2)
 
-	var persionDB map[string]PersonInfo
-	persionDB = make(map[string]PersonInfo)
+	//	var persionDB map[string]PersonInfo
+	//	persionDB = make(map[string]PersonInfo)
 
-	persionDB["1"] = PersonInfo{"1", "Jack", "earth..."}
-	persionDB["2"] = PersonInfo{"2", "Rose", "earth..."}
+	//	persionDB["1"] = PersonInfo{"1", "Jack", "earth..."}
+	//	persionDB["2"] = PersonInfo{"2", "Rose", "earth..."}
 
-	delete(persionDB, "1")
+	//	delete(persionDB, "1")
 
-	person, ok := persionDB["1"]
-	if ok {
-		fmt.Println(person.ID, person.Name, person.Address)
-	} else {
-		fmt.Println("person not found~")
-	}
+	//	person, ok := persionDB["1"]
+	//	if ok {
+	//		fmt.Println(person.ID, person.Name, person.Address)
+	//	} else {
+	//		fmt.Println("person not found~")
+	//	}
 }

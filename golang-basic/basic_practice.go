@@ -59,10 +59,10 @@ func main() {
 	//	fmt.Println(idx, index)
 
 	// ++, -- 是语句而不是表达式，平行赋值时，不能使用++/--
-	//	array := [...]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
-	//	for i, j := 0, len(array)-1; i < j; i, j = i+1, j-1 {
-	//		array[i], array[j] = array[j], array[i]
-	//	}
-	//	fmt.Println(array)
+	array := [...]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+	for i, j := 0, len(array)-1; i < j; i, j = i+1, j-1 {
+		array[i], array[j] = array[j], array[i]
+	}
+	fmt.Println(array)
 
 }

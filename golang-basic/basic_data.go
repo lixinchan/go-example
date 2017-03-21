@@ -34,6 +34,45 @@ import (
 //	return &File{fd: name, name: name}
 //}
 
+// array
+func Sum(array *[3]float64) (sum float64) {
+	for _, v := range array {
+		sum += v
+	}
+	return
+}
+
+// slice
+//func (f *File) Read(buf []byte) (n int, err error) {
+//	// 读取前32个字节
+//	//	n, err := f.Read(buf[0:32])
+
+//	for i := 0; i < 32; i++ {
+//		nbytes, e := f.Read(buf[i : i+1])
+//		if nbytes == 0 || e != nil {
+//			err = e
+//			break
+//		}
+//		n += nbytes
+//	}
+//	return
+//}
+
+// test append
+func myAppend(slice, data []byte) []byte {
+	length := len(slice)
+	if length+len(data) > cap(slice) {
+		newSlice := make([]byte, (length+len(data))*2)
+		copy(newSlice, slice)
+		slice = newSlice
+	}
+	slice = slice[0 : length+len(data)]
+	for i, v := range data {
+		slice[length+i] = v
+	}
+	return slice
+}
+
 func main() {
 
 	//	slice := make([]int, 10, 100)
@@ -58,4 +97,13 @@ func main() {
 	//	array := make([]int, 10)
 	//	fmt.Println(&array)
 
+	//array
+	//	array := [...]float64{6.0, 7.1, 8.2}
+	//	fmt.Println(Sum(&array))
+
+	//self define slice append
+	slice1 := []byte{1, 2, 3}
+	slice2 := []byte{4, 5, 6}
+	slice3 := myAppend(slice1, slice2)
+	fmt.Println(slice3)
 }

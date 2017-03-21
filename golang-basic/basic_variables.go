@@ -104,11 +104,11 @@ func main() {
 	//	fmt.Println(^2)
 	// String
 	var str string
-	str = "Hello," +
-		"World"
+	//	str = "Hello," +
+	//		"World"
 	// 原始字符串标识的值在重音符中的字符是不转义的
-	//	str = `Hello,
-	//	World`
+	str = `Hello,
+		World`
 	fmt.Println(str)
 	//	fmt.Println(len(str))
 	//	ch := str[0]

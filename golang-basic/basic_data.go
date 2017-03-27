@@ -102,8 +102,14 @@ func main() {
 	//	fmt.Println(Sum(&array))
 
 	//self define slice append
-	slice1 := []byte{1, 2, 3}
-	slice2 := []byte{4, 5, 6}
-	slice3 := myAppend(slice1, slice2)
-	fmt.Println(slice3)
+	//	slice1 := []byte{1, 2, 3}
+	//	slice2 := []byte{4, 5, 6}
+	//	slice3 := myAppend(slice1, slice2)
+	//	fmt.Println(slice3)
+
+	// two-dimensional array
+	// array-of-arrays
+	type Transform [8][8]float64
+	// slice-of-slices
+	type LineOfText [][]byte
 }

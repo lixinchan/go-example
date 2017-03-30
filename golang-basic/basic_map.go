@@ -32,12 +32,12 @@ func main() {
 	//	fmt.Println(person1)
 
 	var timeZone = map[string]int{"UTC": 0 * 60 * 60, "CST": -6 * 60 * 60}
-	offset := timeZone["CST"]
+	offset := timeZone["CST..d"]
 
 	fmt.Println(offset)
 
-	if off, ok := timeZone["UTC"]; ok {
-		fmt.Println(ok)
-		fmt.Println(off)
-	}
+	//	if off, ok := timeZone["UTC"]; ok {
+	//		fmt.Println(ok)
+	//		fmt.Println(off)
+	//	}
 }

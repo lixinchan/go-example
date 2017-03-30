@@ -98,16 +98,4 @@ func main() {
 	//	fmt.Println(array)
 	//	retArray := reverseArray(array)
 	//	fmt.Println(retArray)
-	var XSize int = 3
-	var YSize int = 4
-	//	picture := make([][]uint8, YSize)
-	//	for i := range picture {
-	//		picture[i] = make([]uint8, XSize)
-	//	}
-
-	picture := make([][]uint8, YSize)
-	pixels := make([]uint8, XSize*YSize)
-	for i := range picture {
-		picture[i], pixels = pixels[:XSize], pixels[XSize:]
-	}
 }

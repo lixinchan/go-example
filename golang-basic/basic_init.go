@@ -3,7 +3,9 @@
 package main
 
 import (
+	"flag"
 	"fmt"
+	"log"
 	"os"
 )
 
@@ -38,18 +40,32 @@ func (b ByteSize) String() string {
 	return fmt.Sprintf("%.2fB", b)
 }
 
+//variables
+var (
+	home   = os.Getenv("HOME")
+	user   = os.Getenv("USER")
+	gopath = os.Getenv("GOPATH")
+)
+
+func init() {
+	if user == "" {
+		log.Fatal("$USER not set")
+	}
+	if home == "" {
+		home = "/home/" + user
+	}
+	if gopath == "" {
+		gopath = home + "/go"
+	}
+	flag.StringVar(&gopath, "gopath", gopath, "override default GOPATH")
+}
+
 func main() {
 
 	fmt.Println(KB)
 	fmt.Println(MB)
 	fmt.Println(GB)
 
-	//variables
-	var (
-		home   = os.Getenv("HOME")
-		user   = os.Getenv("USER")
-		gopath = os.Getenv("GOPATH")
-	)
 	fmt.Println(home)
 	fmt.Println(user)
 	fmt.Println(gopath)

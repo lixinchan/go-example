@@ -19,3 +19,16 @@ func SortMap(ages map[string]int) {
 		fmt.Printf("%s\t%d\n", name, ages[name])
 	}
 }
+
+// equal map
+func EqualMap(x, y map[string]int) bool {
+	if len(x) != len(y) {
+		return false
+	}
+	for key, xVal := range x {
+		if yVal, ok := y[key]; !ok || xVal != yVal {
+			return false
+		}
+	}
+	return true
+}

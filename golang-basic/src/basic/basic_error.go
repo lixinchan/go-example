@@ -1,5 +1,5 @@
 // basic_error
-package main
+package basic
 
 import (
 	"fmt"

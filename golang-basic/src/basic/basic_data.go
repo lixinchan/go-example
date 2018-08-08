@@ -1,5 +1,5 @@
 // basic_data.go
-package main
+package basic
 
 import (
 	"fmt"

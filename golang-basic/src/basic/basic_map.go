@@ -1,5 +1,5 @@
 // basic_map
-package main
+package basic
 
 import (
 	"fmt"

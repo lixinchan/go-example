@@ -1,5 +1,5 @@
 // basic_array.go
-package main
+package basic
 
 import (
 	"fmt"

@@ -1,5 +1,5 @@
 // fun_question
-package main
+package basic
 
 import (
 	"fmt"

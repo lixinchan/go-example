@@ -1,5 +1,5 @@
 // golang_closure
-package main
+package basic
 
 import (
 	"fmt"

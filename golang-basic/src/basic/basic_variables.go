@@ -1,5 +1,5 @@
 // basic_variables
-package main
+package basic
 
 import (
 	"fmt"

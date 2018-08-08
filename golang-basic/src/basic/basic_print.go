@@ -1,5 +1,5 @@
 // basic_print.go
-package main
+package basic
 
 import (
 	"fmt"

@@ -1,6 +1,6 @@
 // basic_init.go
 
-package main
+package basic
 
 import (
 	"flag"

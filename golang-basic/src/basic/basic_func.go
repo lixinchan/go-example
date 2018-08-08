@@ -1,5 +1,5 @@
 // basic_func
-package main
+package basic
 
 import (
 	"fmt"

@@ -1,5 +1,5 @@
 // basic_practice.go
-package main
+package basic
 
 import (
 	"fmt"

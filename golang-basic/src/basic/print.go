@@ -16,7 +16,8 @@ type T struct {
 func (t *T) String() string {
 	return fmt.Sprintf("%d%g%q", t.a, t.b, t.c)
 }
-func main() {
+
+func Print() {
 
 	fmt.Printf("Hello %d\n", 23)
 	fmt.Fprint(os.Stdout, "Hello ", 23, "\n")

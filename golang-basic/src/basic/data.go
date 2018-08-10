@@ -1,11 +1,6 @@
 // basic_data.go
 package basic
 
-import (
-	"fmt"
-	//	"os"
-)
-
 //func NewFile(fd int, name string) *File {
 //	if fd < 0 {
 //		return nil
@@ -73,7 +68,7 @@ func myAppend(slice, data []byte) []byte {
 	return slice
 }
 
-func main() {
+func Data() {
 
 	//	slice := make([]int, 10, 100)
 	//	fmt.Println("len:", len(slice))

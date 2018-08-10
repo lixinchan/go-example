@@ -13,7 +13,7 @@ func counterFactory(j int) func() int {
 	}
 }
 
-func main() {
+func Closure() {
 	ret := counterFactory(0)
 	fmt.Println("%dn", ret())
 	fmt.Println("%dn", ret())

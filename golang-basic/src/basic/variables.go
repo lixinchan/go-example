@@ -6,7 +6,7 @@ import (
 	//	"os"
 )
 
-func main() {
+func Variables() {
 	// variables declare
 	// var v1 int
 	//	var v2 string
@@ -135,5 +135,4 @@ func main() {
 	//	for i, ch := range str {
 	//		fmt.Println(i, ch)
 	//	}
-
 }

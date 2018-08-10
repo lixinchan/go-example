@@ -31,7 +31,7 @@ HERE:
 	}
 }
 
-func main() {
+func FlowControl() {
 	//	var x int = -5
 
 	// if test

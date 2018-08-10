@@ -42,7 +42,7 @@ func deferSecond() {
 	deferFirst()
 }
 
-func main() {
+func Function() {
 	//	fmt.Println(namedRetVal(2))
 	//	for i := 0; i < 5; i++ {
 	//		fmt.Print(i)

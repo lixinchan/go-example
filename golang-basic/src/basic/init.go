@@ -60,7 +60,7 @@ func init() {
 	flag.StringVar(&gopath, "gopath", gopath, "override default GOPATH")
 }
 
-func main() {
+func Init() {
 
 	fmt.Println(KB)
 	fmt.Println(MB)
@@ -71,5 +71,4 @@ func main() {
 	fmt.Println(gopath)
 
 	// init function
-
 }

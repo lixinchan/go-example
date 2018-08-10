@@ -5,12 +5,12 @@ import (
 	"fmt"
 )
 
-func modify(array [5]int) {
+func Modify(array [5]int) {
 	array[0] = 12
 	fmt.Println("In modify:", array)
 }
 
-func reverseArray(array []int) []int {
+func ReverseArray(array []int) []int {
 	var len int = len(array)
 	for i := 0; i < len/2; i++ {
 		var temp int = array[i]
@@ -20,7 +20,7 @@ func reverseArray(array []int) []int {
 	return array
 }
 
-func main() {
+func Array() {
 	// declare
 	// byte type
 	//	var byteArr []byte = [32]byte{}

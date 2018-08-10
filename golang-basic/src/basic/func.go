@@ -20,7 +20,7 @@ func MyPrint(args ...interface{}) {
 	}
 }
 
-func main() {
+func Func() {
 
 	// 匿名函数&闭包
 	//	var j int = 5

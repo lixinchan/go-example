@@ -5,12 +5,15 @@ import (
 	"fmt"
 )
 
-type error interface {
+type testError interface {
 	Error() string
 }
 
-func Foo(param int) (n int, err error) {
-
+func Foo(param int) (n int, err testError) {
+	if param <= 0 {
+		return 0, err
+	}
+	return param, nil
 }
 
 type PathError struct {
@@ -23,16 +26,17 @@ func (e *PathError) Error() string {
 	return e.Op + " " + e.Path + ":" + e.Err.Error()
 }
 
-func main() {
+func Error() {
 
 	fmt.Println("Hello World!")
 	//错误处理
 
-	n := Foo(0)
+	n, err := Foo(0)
 	if err != nil {
 		// 错误处理
 	} else {
 		// 正常流程
+		fmt.Print(n)
 	}
 
 	// 自定义error类型

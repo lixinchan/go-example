@@ -11,7 +11,7 @@ import (
 //	Address string
 //}
 
-func main() {
+func Maps() {
 	//	var personDB map[string]PersonInf
 	//	personDB = make(map[string]PersonInf)
 	//	personDB["one"] = PersonInf{"1", "Jack", "Earth"}

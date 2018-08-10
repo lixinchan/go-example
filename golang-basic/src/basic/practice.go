@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func Practice() {
 
 	// Q1
 	//	for index := 0; index < 10; index++ {

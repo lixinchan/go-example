@@ -1,4 +1,3 @@
-// basic_data.go
 package basic
 
 //func NewFile(fd int, name string) *File {

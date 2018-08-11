@@ -1,4 +1,3 @@
-// FlowControl
 package basic
 
 import (

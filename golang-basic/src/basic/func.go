@@ -1,4 +1,3 @@
-// basic_func
 package basic
 
 import (

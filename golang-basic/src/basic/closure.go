@@ -1,4 +1,3 @@
-// golang_closure
 package basic
 
 import (

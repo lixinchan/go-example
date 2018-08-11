@@ -1,4 +1,3 @@
-// basic_function.go
 package basic
 
 import (

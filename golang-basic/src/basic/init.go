@@ -1,12 +1,10 @@
-// basic_init.go
-
 package basic
 
 import (
 	"flag"
 	"fmt"
-	"log"
 	"os"
+	"log"
 )
 
 // enum
@@ -43,7 +41,7 @@ func (b ByteSize) String() string {
 //variables
 var (
 	home   = os.Getenv("HOME")
-	user   = os.Getenv("USER")
+	user   = os.Getenv("USERNAME")
 	gopath = os.Getenv("GOPATH")
 )
 

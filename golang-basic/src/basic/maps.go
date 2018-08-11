@@ -1,4 +1,3 @@
-// basic_map
 package basic
 
 import (

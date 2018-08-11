@@ -1,4 +1,3 @@
-// basic_print.go
 package basic
 
 import (

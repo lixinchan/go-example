@@ -1,4 +1,3 @@
-// basic_array.go
 package basic
 
 import (

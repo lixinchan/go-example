@@ -1,4 +1,3 @@
-// basic_variables
 package basic
 
 import (

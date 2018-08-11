@@ -1,4 +1,3 @@
-// basic_error
 package basic
 
 import (

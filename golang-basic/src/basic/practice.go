@@ -1,4 +1,3 @@
-// basic_practice.go
 package basic
 
 import (

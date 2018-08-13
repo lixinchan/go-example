@@ -1,4 +1,4 @@
-package scripture
+package compositetypes
 
 import (
 	"sort"

@@ -1,7 +1,6 @@
-package scripture_test
+package compositetypes
 
 import (
-	. "scripture"
 	"testing"
 )
 

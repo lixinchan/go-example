@@ -6,9 +6,11 @@ import (
 )
 
 func TestAdd(t *testing.T) {
-	t.Log(IsEmpty())
-	for idx:=10; idx >0;idx-- {
-		Add(idx)
+	bag := InitBag()
+	if !bag.IsEmpty() {
+		for idx := 10; idx > 0; idx-- {
+			bag.Add(idx)
+		}
 	}
-	t.Log(Size())
+	t.Log(bag.Size())
 }

@@ -1,51 +1,53 @@
 package chapterone
 
-type arrayStackData interface{}
+import "errors"
 
 type Stack interface {
-	Push(data arrayStackData) // push bagData
-	Pop() arrayStackData      // pop bagData
-	Size() int                // size
-	IsEmpty() bool            // empty
-	IsFull() bool             // full
+	Push(data interface{})     // push
+	Pop() (interface{}, error) // pop
+	Top() (interface{}, error) // top
+	Size() int                 // size
+	IsEmpty() bool             // empty
+	IsFull() bool              // full
 }
 
-type arrayStack []arrayStackData
-
-// init array stack
-func InitArrayStack(size int) [size]arrayStackData {
-	return [size]arrayStackData{}
-}
+type ArrayStack []interface{}
 
 // push
-func (array *arrayStack) Push(data arrayStackData) {
-
+func (array *ArrayStack) Push(data interface{}) {
+	*array = append(*array, data)
 }
 
 // pop
-func (array *arrayStack) Pop() arrayStackData {
+func (array *ArrayStack) Pop() (interface{}, error) {
+	currentPointer := *array
+	if len(currentPointer) == 0 {
+		return nil, errors.New("index out of bound")
+	}
+	value := currentPointer[len(currentPointer)-1]
+	*array = currentPointer[:len(currentPointer)-1]
+	return value, nil
+}
 
+// top
+func (array ArrayStack) Top() (interface{}, error) {
+	if len(array) == 0 {
+		return nil, errors.New("index out of bound")
+	}
+	return array[len(array)-1], nil
 }
 
 // size
-func (array *arrayStack) Size() int {
-	return 0
+func (array ArrayStack) Size() int {
+	return len(array)
 }
 
 // isEmpty
-func (array *arrayStack) IsEmpty() bool {
-
-	return false
+func (array ArrayStack) IsEmpty() bool {
+	return len(array) == 0
 }
 
 // isFull
-func (array *arrayStack) IsFull() bool {
-
-	return false
-}
-
-// resizing
-func resizing() []arrayStack {
-
-	return nil
+func (array ArrayStack) IsFull() bool {
+	return len(array) == cap(array)
 }

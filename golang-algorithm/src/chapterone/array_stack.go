@@ -2,7 +2,7 @@ package chapterone
 
 import "errors"
 
-type Stack interface {
+type ArrayStack interface {
 	Push(data interface{})     // push
 	Pop() (interface{}, error) // pop
 	Top() (interface{}, error) // top
@@ -11,15 +11,15 @@ type Stack interface {
 	IsFull() bool              // full
 }
 
-type ArrayStack []interface{}
+type StackArray []interface{}
 
 // push
-func (array *ArrayStack) Push(data interface{}) {
+func (array *StackArray) Push(data interface{}) {
 	*array = append(*array, data)
 }
 
 // pop
-func (array *ArrayStack) Pop() (interface{}, error) {
+func (array *StackArray) Pop() (interface{}, error) {
 	currentPointer := *array
 	if len(currentPointer) == 0 {
 		return nil, errors.New("index out of bound")
@@ -30,7 +30,7 @@ func (array *ArrayStack) Pop() (interface{}, error) {
 }
 
 // top
-func (array ArrayStack) Top() (interface{}, error) {
+func (array StackArray) Top() (interface{}, error) {
 	if len(array) == 0 {
 		return nil, errors.New("index out of bound")
 	}
@@ -38,16 +38,16 @@ func (array ArrayStack) Top() (interface{}, error) {
 }
 
 // size
-func (array ArrayStack) Size() int {
+func (array StackArray) Size() int {
 	return len(array)
 }
 
 // isEmpty
-func (array ArrayStack) IsEmpty() bool {
+func (array StackArray) IsEmpty() bool {
 	return len(array) == 0
 }
 
 // isFull
-func (array ArrayStack) IsFull() bool {
+func (array StackArray) IsFull() bool {
 	return len(array) == cap(array)
 }

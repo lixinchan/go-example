@@ -1,48 +1,52 @@
 package chapterone
 
-// data type
-type linkedStackData interface{}
-
 // linked stack
-type linkedStack struct {
-	data linkedStackData
-	next *linkedStack
+type LinkedStackNode struct {
+	data interface{}
+	next *LinkedStackNode
 }
 
 // linkedStack's methods
 type LinkedStack interface {
-	Push(data linkedStackData)
-	Pop() linkedStackData
-	Size() int
-	IsEmpty() bool
-	IsFull() bool
+	Push(data interface{})     // push
+	Pop() (interface{}, error) // pop
+	Top() (interface{}, error) // top
+	Size() int                 // size
+	IsEmpty() bool             // isEmpty
+	IsFull() bool              // isFull
 }
 
-// init linkedStack
-func InitLinkedStack() *linkedStack {
-	return &linkedStack{}
-}
-
-func (stack *linkedStack) Push(data linkedStackData) {
+// push
+func (stack *LinkedStackNode) Push(data interface{}) {
 
 }
 
-func (stack *linkedStack) Pop() linkedStackData {
+// pop
+func (stack *LinkedStackNode) Pop() (interface{}, error) {
 
-	return nil
+	return nil, nil
 }
 
-func (stack *linkedStack) Size() int {
+// top
+func (stack *LinkedStackNode) Top() (interface{}, error) {
+
+	return nil, nil
+}
+
+// size
+func (stack LinkedStackNode) Size() int {
 
 	return 0
 }
 
-func (stack *linkedStack) IsEmpty() bool {
+// isEmpty
+func (stack LinkedStackNode) IsEmpty() bool {
 
 	return false
 }
 
-func (stack *linkedStack) IsFull() bool {
+// isFull
+func (stack LinkedStackNode) IsFull() bool {
 
 	return false
 }

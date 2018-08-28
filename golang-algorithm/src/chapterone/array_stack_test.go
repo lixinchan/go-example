@@ -1,8 +1,8 @@
 package chapterone_test
 
 import (
-	"testing"
 	. "chapterone"
+	"testing"
 )
 
 func TestArrayStack_Push(t *testing.T) {

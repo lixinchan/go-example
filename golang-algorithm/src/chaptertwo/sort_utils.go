@@ -17,6 +17,14 @@ func Exchange(array []int, i, j int) {
 
 // print array
 func PrintArray(array []int) {
+	if array == nil {
+		fmt.Print("nil")
+		return
+	}
+	if len(array) == 0 {
+		fmt.Print("[]")
+		return
+	}
 	for _, v := range array {
 		fmt.Print(v, " ")
 	}

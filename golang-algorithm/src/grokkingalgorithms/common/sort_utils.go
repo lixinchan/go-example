@@ -16,9 +16,11 @@ func Exchange(array []int, idx, jdx int) {
 func PrintArray(array []int) {
 	if array == nil {
 		fmt.Println("nil")
+		return
 	}
 	if len(array) == 0 {
 		fmt.Println("[]")
+		return
 	}
 	fmt.Println(array)
 }

@@ -1,6 +1,9 @@
 package chapterone
 
-import "errors"
+import (
+	"errors"
+	"sync"
+)
 
 type ArrayStack interface {
 	Push(data interface{})     // push
@@ -11,43 +14,52 @@ type ArrayStack interface {
 	IsFull() bool              // full
 }
 
-type StackArray []interface{}
+type StackArray struct {
+	element [] interface{}
+	lock    sync.RWMutex
+}
 
 // push
 func (array *StackArray) Push(data interface{}) {
-	*array = append(*array, data)
+	array.lock.Lock()
+	array.element = append(array.element, data)
+	array.lock.Unlock()
 }
 
 // pop
 func (array *StackArray) Pop() (interface{}, error) {
-	currentPointer := *array
+	array.lock.RLock()
+	currentPointer := array.element
 	if len(currentPointer) == 0 {
 		return nil, errors.New("index out of bound")
 	}
 	value := currentPointer[len(currentPointer)-1]
-	*array = currentPointer[:len(currentPointer)-1]
+	array.element = currentPointer[:len(currentPointer)-1]
+	array.lock.Unlock()
 	return value, nil
 }
 
 // top
 func (array StackArray) Top() (interface{}, error) {
-	if len(array) == 0 {
+	array.lock.RLock()
+	if len(array.element) == 0 {
 		return nil, errors.New("index out of bound")
 	}
-	return array[len(array)-1], nil
+	array.lock.RUnlock()
+	return array.element[len(array.element)-1], nil
 }
 
 // size
 func (array StackArray) Size() int {
-	return len(array)
+	return len(array.element)
 }
 
 // isEmpty
 func (array StackArray) IsEmpty() bool {
-	return len(array) == 0
+	return len(array.element) == 0
 }
 
 // isFull
 func (array StackArray) IsFull() bool {
-	return len(array) == cap(array)
+	return len(array.element) == cap(array.element)
 }

@@ -2,11 +2,16 @@ package chapterone_test
 
 import (
 	. "chapterone"
-	"testing"
 	"fmt"
+	"testing"
 )
 
-func TestGcd(t *testing.T) {
-	retVal := Gcd(16, 4)
+func TestGcdRecursive(t *testing.T) {
+	retVal := GcdRecursive(16, 4)
+	fmt.Println("The gcd is:", retVal)
+}
+
+func TestGcdLoop(t *testing.T) {
+	retVal := GcdLoop(16, 4)
 	fmt.Println("The gcd is:", retVal)
 }

@@ -15,7 +15,7 @@ func MultiplicationTable() {
 			} else {
 				ret = strconv.Itoa(idx * jdx)
 			}
-			fmt.Print(jdx, " * ", idx, " = ", ret, "  ")
+			fmt.Print(jdx, " * ", idx, " = ", ret, " ")
 		}
 		fmt.Println()
 	}

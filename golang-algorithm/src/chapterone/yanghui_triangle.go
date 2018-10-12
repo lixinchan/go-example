@@ -1,13 +1,18 @@
 package chapterone
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // print yanghui triangle
 func PrintTriangle(line int) {
+	if line <= 0 {
+		return
+	}
 	array := make([]int, 10)
 	for idx := 0; idx < line; idx++ {
 		for jdx := 0; jdx < (line - idx); jdx++ {
-			fmt.Print("-")
+			fmt.Print(" ")
 		}
 		for jdx := 0; jdx < (idx + 1); jdx++ {
 			length := len(array)

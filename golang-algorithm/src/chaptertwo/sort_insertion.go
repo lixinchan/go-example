@@ -1,6 +1,7 @@
 // sort_insertion
 package chaptertwo
 
+// compare & swap element position
 func Sort(array []int) {
 	length := len(array)
 	for i := 0; i < length; i++ {
@@ -11,6 +12,7 @@ func Sort(array []int) {
 
 }
 
+// compare & shift element position, but not swap position
 func SortEnhance(array []int) {
 	length := len(array)
 	var j int

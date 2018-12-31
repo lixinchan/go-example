@@ -17,10 +17,24 @@ func NewHashSet() *HashSet {
 
 // add
 func (hashSet *HashSet) Add(e interface{}) bool {
+	if e == nil {
+		return false
+	}
 	if hashSet.m[e] {
 		return false
 	}
 	hashSet.m[e] = true
+	return true
+}
+
+// add all
+func (hashSet *HashSet) AddAll(array []interface{}) bool {
+	if len(array) == 0 {
+		return false
+	}
+	for _, v := range array {
+		hashSet.Add(v)
+	}
 	return true
 }
 

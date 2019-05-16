@@ -2,6 +2,7 @@ package forthchapter
 
 import "grokkingalgorithms/common"
 
+// FindMax find max array ele
 func FindMax(array []int) int {
 	if array == nil || len(array) == 0 {
 		return -1

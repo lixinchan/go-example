@@ -2,7 +2,7 @@ package forthchapter
 
 import "grokkingalgorithms/common"
 
-// quick sort
+// QuickSort sort array
 func QuickSort(array []int) []int {
 	if array == nil {
 		return nil

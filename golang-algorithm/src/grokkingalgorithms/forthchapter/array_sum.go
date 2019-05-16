@@ -1,6 +1,6 @@
 package forthchapter
 
-// sum of array loop
+// ArrayLoopSum sum of array loop
 func ArrayLoopSum(array []int) int {
 	if array == nil {
 		return 0
@@ -12,7 +12,7 @@ func ArrayLoopSum(array []int) int {
 	return sum
 }
 
-// sum of array recursive
+// ArrayRecursiveSum sum of array recursive
 func ArrayRecursiveSum(array []int) int {
 	if len(array) == 0 {
 		return 0

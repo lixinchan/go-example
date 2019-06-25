@@ -1,7 +1,7 @@
 package main
 
 import (
-	"feature/redis"
+	"component/redis/feature/redis"
 	"fmt"
 	"github.com/urfave/cli"
 	"log"

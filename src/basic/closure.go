@@ -14,7 +14,8 @@ func counterFactory(j int) func() int {
 
 func Closure() {
 	ret := counterFactory(0)
-	fmt.Println("%dn", ret())
-	fmt.Println("%dn", ret())
-	fmt.Println("%dn", ret())
+	fmt.Printf("%dn", ret())
+	fmt.Printf("%dn", ret())
+	fmt.Printf("%dn", ret())
+
 }

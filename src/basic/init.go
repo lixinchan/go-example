@@ -4,7 +4,6 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	"log"
 )
 
 // enum
@@ -46,9 +45,6 @@ var (
 )
 
 func init() {
-	if user == "" {
-		log.Fatal("$USER not set")
-	}
 	if home == "" {
 		home = "/home/" + user
 	}

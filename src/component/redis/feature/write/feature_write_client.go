@@ -1,11 +1,11 @@
 package main
 
 import (
-	"component/redis/feature/redis"
-	"component/redis/lib/utils"
 	crand "crypto/rand"
 	"encoding/json"
 	"fmt"
+	"github.com/lixinchan/go-modules/component/redis/feature"
+	"github.com/lixinchan/go-modules/component/redis/lib/utils"
 	"github.com/urfave/cli"
 	"math/big"
 	"math/rand"
@@ -22,7 +22,7 @@ var (
 	handleConcurrent = int(10)
 	path             = ""
 	prefix           = ""
-	redisClient      *redis.Client
+	redisClient      *feature.Client
 )
 
 func main() {
@@ -92,7 +92,7 @@ func main() {
 		handleConcurrent = int(concurrent)
 		path = string(path)
 		prefix = string(prefix)
-		redisConfig := &redis.PoolConf{
+		redisConfig := &feature.PoolConf{
 			Host:    host,
 			Port:    port,
 			InitDb:  initDb,
@@ -105,13 +105,13 @@ func main() {
 	}
 }
 
-func insertData(redisConf *redis.PoolConf, path, prefix string, concurrent int) {
+func insertData(redisConf *feature.PoolConf, path, prefix string, concurrent int) {
 	if utils.IsValidDir(path) {
 		fileArray := utils.ListAllFile(path)
 		if len(fileArray) == 0 {
 			return
 		}
-		redisClient, err := redis.NewClient("write", redisConf)
+		redisClient, err := feature.NewClient("write", redisConf)
 		if err != nil {
 			fmt.Println("redis init failed!", err)
 			os.Exit(1)
@@ -125,9 +125,9 @@ func insertData(redisConf *redis.PoolConf, path, prefix string, concurrent int) 
 				if len(ln) > 2 {
 					featureData = make(map[string]string)
 					if err := json.Unmarshal([]byte(ln[1]), &featureData); err == nil {
-						features := make([]redis.Feature, 0)
+						features := make([]feature.Feature, 0)
 						for k, v := range featureData {
-							f := redis.Feature{Field: k, Val: v, Expire: randExpireTime(1000, 3600)}
+							f := feature.Feature{Field: k, Val: v, Expire: randExpireTime(1000, 3600)}
 							features = append(features, f)
 						}
 						_, err = redisClient.Hmset(prefix+":"+ln[0], features, 86400)

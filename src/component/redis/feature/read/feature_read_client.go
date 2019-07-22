@@ -1,8 +1,8 @@
 package main
 
 import (
-	"component/redis/feature/redis"
 	"fmt"
+	"github.com/lixinchan/go-modules/component/redis/feature"
 	"github.com/urfave/cli"
 	"log"
 	"os"
@@ -19,8 +19,8 @@ var (
 	prefixMatchCount = int64(0)
 	handledCount     = int64(0)
 	deletedCount     = int64(0)
-	scanRedisClient  *redis.Client
-	redisClient      *redis.Client
+	scanRedisClient  *feature.Client
+	redisClient      *feature.Client
 	twenty           = []string{"c31", "c30", "c11", "c33", "Su", "c10", "c32", "Sv", "c13", "c12", "c34", "c15", "c14", "c17", "c16", "c19", "c18", "c20", "c22", "c21", "c24", "c23"}
 	fifty            = []string{"c31", "c30", "c11", "c33", "Su", "c10", "c32", "Sv", "c13", "c12", "c34", "c15", "c14", "c17", "c16", "c19", "c18", "c20", "c22", "c21", "c24", "c23", "c26", "c25", "c28", "c27", "c29", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c31", "c30", "c11", "c33", "Su", "c10", "c32", "Sv", "c13", "c12", "c34", "c15", "c14", "c17", "c16", "c19", "c18", "c20"}
 	hundred          = []string{"c31", "c30", "c11", "c33", "Su", "c10", "c32", "Sv", "c13", "c12", "c34", "c15", "c14", "c17", "c16", "c19", "c18", "c20", "c22", "c21", "c24", "c23", "c26", "c25", "c28", "c27", "c29", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c31", "c30", "c11", "c33", "Su", "c10", "c32", "Sv", "c13", "c12", "c34", "c15", "c14", "c17", "c16", "c19", "c18", "c20", "c22", "c21", "c24", "c23", "c26", "c25", "c28", "c27", "c29", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8", "c9", "c31", "c30", "c11", "c33", "Su", "c10", "c32", "Sv", "c13", "c12", "c34", "c15", "c14", "c17", "c16", "c19", "c18", "c20", "c22", "c21", "c24", "c23", "c26", "c25", "c28", "c27", "c29", "c1", "c2", "c3", "c4", "c5", "c6", "c7"}
@@ -28,15 +28,16 @@ var (
 	queryCnt = int64(0)
 )
 
+//HandlerParams param
 type HandlerParams struct {
 	prefix          string
-	minTtl          int64
-	maxTtl          int64
+	minTTL          int64
+	maxTTL          int64
 	handle          string
 	handleFunc      func(*HandlerParams, []string)
 	debug           bool
-	redisConfig     *redis.PoolConf
-	redisDistConfig *redis.PoolConf
+	redisConfig     *feature.PoolConf
+	redisDistConfig *feature.PoolConf
 	invertMatch     bool
 	fieldCount      int
 }
@@ -56,8 +57,8 @@ func main() {
 	var count int64
 	var cursor string
 	var prefix string
-	var minTtl int64
-	var maxTtl int64
+	var minTTL int64
+	var maxTTL int64
 	var handle string
 	var debug bool
 	var concurrent int
@@ -98,13 +99,13 @@ func main() {
 			Name:        "minttl",
 			Value:       -1,
 			Usage:       "删除key时需满足的最小ttl, 默认为 -1, 表示忽略此条件",
-			Destination: &minTtl,
+			Destination: &minTTL,
 		},
 		cli.Int64Flag{
 			Name:        "maxttl",
 			Value:       -1,
 			Usage:       "删除key时需满足的最大ttl, 默认为 -1",
-			Destination: &maxTtl,
+			Destination: &maxTTL,
 		},
 		cli.IntFlag{
 			Name:        "concurrent",
@@ -176,7 +177,7 @@ func main() {
 		handleConcurrent = int64(concurrent)
 		handleJobChan = make(chan bool, handleConcurrent)
 
-		redisConfig := &redis.PoolConf{
+		redisConfig := &feature.PoolConf{
 			Host:    host,
 			Port:    port,
 			InitDb:  db,
@@ -198,8 +199,8 @@ func main() {
 		}
 		handlerParams := &HandlerParams{
 			prefix:      prefix,
-			minTtl:      minTtl,
-			maxTtl:      maxTtl,
+			minTTL:      minTTL,
+			maxTTL:      maxTTL,
 			debug:       debug,
 			handle:      handle,
 			handleFunc:  handlerFunc,
@@ -216,14 +217,14 @@ func main() {
 	}
 }
 
-func redisScan(conf *redis.PoolConf, cursor string, handlerParams *HandlerParams, count int64, handler func(*HandlerParams, []string)) (err error) {
-	redisClient, err = redis.NewClient("default", conf)
+func redisScan(conf *feature.PoolConf, cursor string, handlerParams *HandlerParams, count int64, handler func(*HandlerParams, []string)) (err error) {
+	redisClient, err = feature.NewClient("default", conf)
 	err = redisClient.Ping()
 	if err != nil {
 		fmt.Println("init redis client failed, err:", err)
 		return
 	}
-	scanRedisClient, err = redis.NewClient("scan", conf)
+	scanRedisClient, err = feature.NewClient("scan", conf)
 	err = scanRedisClient.Ping()
 	if err != nil {
 		fmt.Println("init redis client failed, err:", err)
@@ -295,7 +296,7 @@ func deleteHandler(params *HandlerParams, keyList []string) {
 		if prefixMatch(key, params.prefix, params.invertMatch) {
 			atomic.AddInt64(&prefixMatchCount, 1)
 			ttl := int64(-1)
-			if params.minTtl > 0 || params.maxTtl > 0 {
+			if params.minTTL > 0 || params.maxTTL > 0 {
 				ttl, err = redisClient.TTL(key)
 				if err != nil {
 					fmt.Printf("ttl err: %v\n", err)
@@ -305,10 +306,10 @@ func deleteHandler(params *HandlerParams, keyList []string) {
 					fmt.Printf("no ttl: %s\n", key)
 					continue
 				}
-				if params.minTtl > 0 && ttl >= params.minTtl {
+				if params.minTTL > 0 && ttl >= params.minTTL {
 					continue
 				}
-				if params.maxTtl > 0 && ttl <= params.maxTtl {
+				if params.maxTTL > 0 && ttl <= params.maxTTL {
 					continue
 				}
 			}

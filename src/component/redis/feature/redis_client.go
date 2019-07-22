@@ -1,8 +1,8 @@
-package redis
+package feature
 
 import (
-	"component/redis/lib/log"
 	"github.com/garyburd/redigo/redis"
+	"github.com/lixinchan/go-modules/component/redis/lib/log"
 	"strconv"
 	"strings"
 	"sync/atomic"

@@ -1,0 +1,10 @@
+github.com/garyburd/redigo v1.6.0 h1:0VruCpn7yAIIu7pWVClQC8wxCJEcG3nyzpMSHKi1PQc=
+github.com/garyburd/redigo v1.6.0/go.mod h1:NR3MbYisc3/PwhQ00EMzDiPmrwpPxAn5GI05/YaO1SY=
+github.com/lixinchan/go-modules/component/redis/feature v0.0.0-20190721170705-ccee994c6bba h1:FkuvaEBpmraMjPGZoIDbrgbID+qlaYUOMIaWsgliOgk=
+github.com/lixinchan/go-modules/component/redis/feature v0.0.0-20190721170705-ccee994c6bba/go.mod h1:jiwJs1wVfwKuW95xri+bltRWP1qnxdGdc1T4rD+4oE4=
+github.com/lixinchan/go-modules/component/redis/lib/log v0.0.0-20190721165540-21cd172bc1b5 h1:dDSOUhwBAQhTfiSfJvr1NMM58eb1oAwhDVX/Ybv96WU=
+github.com/lixinchan/go-modules/component/redis/lib/log v0.0.0-20190721165540-21cd172bc1b5/go.mod h1:xSJDIA6R4p/kDAQ2nR8oPxHkDiiGuydJXzLc873KU9E=
+github.com/lixinchan/go-modules/component/redis/lib/utils v0.0.0-20190721165540-21cd172bc1b5 h1:s5UPcgUiIUjo/7JdYqVmJ93DivaGG4d7yzpW7nX+Lzw=
+github.com/lixinchan/go-modules/component/redis/lib/utils v0.0.0-20190721165540-21cd172bc1b5/go.mod h1:cldbOVxH35dS7smSOllaTf04IiVWxZGexejIQiC2C+0=
+github.com/urfave/cli v1.20.0 h1:fDqGv3UG/4jbVl/QkFwEdddtEDjh/5Ov6X+0B/3bPaw=
+github.com/urfave/cli v1.20.0/go.mod h1:70zkFmudgCuE/ngEzBv17Jvp/497gISqfk5gWijbERA=

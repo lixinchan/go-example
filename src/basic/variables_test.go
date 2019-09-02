@@ -1,8 +1,8 @@
 package basic_test
 
 import (
-	"testing"
 	. "basic"
+	"testing"
 )
 
 func TestVariables(t *testing.T) {

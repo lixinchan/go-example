@@ -7,17 +7,15 @@ import (
 func exam(x int) bool {
 	if x >= 0 {
 		return true
-	} else {
-		return false
 	}
+	return false
 }
 
 func example(x int) int {
 	if x == 0 {
 		return 5
-	} else {
-		return x
 	}
+	return x
 }
 
 func myGoto() {

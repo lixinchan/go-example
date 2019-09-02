@@ -107,8 +107,8 @@ func Data() {
 	// slice-of-slices
 	type LineOfText [][]byte
 
-	var XSize int = 3
-	var YSize int = 4
+	XSize := 3
+	YSize := 4
 	//	picture := make([][]uint8, YSize)
 	//	for i := range picture {
 	//		picture[i] = make([]uint8, XSize)

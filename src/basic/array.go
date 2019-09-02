@@ -10,9 +10,9 @@ func Modify(array [5]int) {
 }
 
 func ReverseArray(array []int) []int {
-	var len int = len(array)
+	len := len(array)
 	for i := 0; i < len/2; i++ {
-		var temp int = array[i]
+		temp := array[i]
 		array[i] = array[len-1-i]
 		array[len-i-1] = temp
 	}

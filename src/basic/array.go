@@ -10,11 +10,11 @@ func Modify(array [5]int) {
 }
 
 func ReverseArray(array []int) []int {
-	len := len(array)
-	for i := 0; i < len/2; i++ {
+	length := len(array)
+	for i := 0; i < length/2; i++ {
 		temp := array[i]
-		array[i] = array[len-1-i]
-		array[len-i-1] = temp
+		array[i] = array[length-1-i]
+		array[length-i-1] = temp
 	}
 	return array
 }
@@ -97,4 +97,23 @@ func Array() {
 	//	fmt.Println(array)
 	//	retArray := reverseArray(array)
 	//	fmt.Println(retArray)
+
+	//arr := [...]int{1, 2, 3}
+	//b := &arr
+
+	//fmt.Println(arr[1], arr[2])
+	//fmt.Println(b[1], b[2])
+	//for idx, v := range b {
+	//	fmt.Println(idx, v)
+	//}
+
+	var times [5][0]int
+	for idx := range times {
+		fmt.Println(idx, "hello")
+	}
+
+	for range times {
+		fmt.Println("hello")
+	}
+
 }

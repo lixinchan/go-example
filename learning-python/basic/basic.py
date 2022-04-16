@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import requests
 import json
 import re
 
@@ -14,10 +13,16 @@ class Basic(object):
         print('1024', '*', '768', '=', 1024 * 768)
         print('''line1
         ...line2''')
+        print(r'\\\\')
+        print(r'''
+        xxx''')
         a = 'abc'
         b = a
         a = 'xyz'
         print(b)
+        print(10/3)
+        print(10//3)
+        print(10 % 3)
 
     @staticmethod
     def test_data_type():
@@ -31,6 +36,7 @@ class Basic(object):
         print(len(b'abc'))
         print(len(str_encode))
         print(len('中文'))
+        print(b'ABC'.decode('utf-8'))
 
         # format
         age = 'age: %s' % (28)
@@ -127,10 +133,10 @@ class Basic(object):
 
 if __name__ == '__main__':
     # Basic.test_print()
-    # Basic.test_data_type()
+    Basic.test_data_type()
     # Basic.test_complex_type()
     # Basic.test_regex()
     # Basic.test_condition()
     # Basic.test_loop()
     # Basic.test_dict()
-    Basic.test_list_map()
+    # Basic.test_list_map()
